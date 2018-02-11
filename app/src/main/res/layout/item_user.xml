@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.widget.Switch" />
+        <variable
+            name="userViewModel"
+            type="com.deepak.clay.view.UserViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <Switch
+            android:id="@+id/access_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:checked="@{userViewModel.switchCompat}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="@{userViewModel.userNameTv}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="User 1" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

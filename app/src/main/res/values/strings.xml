@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ClayTest</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="front_door">Front door</string>
+    <string name="storgae_door">Storage door</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="doors">Doors</string>
+    <string name="signout">Sign Out</string>
+    <string name="configure">Configure</string>
+    <string name="access_logs">Access Logs</string>
+    <string name="open">Open</string>
+    <string name="door_name">Door name</string>
+    <string name="opened">Opened</string>
+    <string name="access_denied">Access Denied</string>
+    <string name="save">Save</string>
+</resources>

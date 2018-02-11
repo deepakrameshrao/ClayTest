@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "570993133825",
+    "firebase_url": "https://clay-lock.firebaseio.com",
+    "project_id": "clay-lock",
+    "storage_bucket": "clay-lock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570993133825:android:b651ea2d9eae8c8c",
+        "android_client_info": {
+          "package_name": "com.deepak.clay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570993133825-67blphnc51uqgt0r82qvo84bqt9k5dn0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGSaKEM8QZNuJ9xgDj6YItqzV-Iiz7Zx0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,9 +11,9 @@ import com.deepak.clay.BR
 class Door(doorName: String?, var userList: String?) : BaseObservable() {
 
     @get: Bindable
-    var doorName: String = "$doorName Door"
+    var doorName: String = doorName ?: ""
         set(value) {
-            field = "$value Door"
+            field = value
             notifyPropertyChanged(BR.doorName)
         }
 

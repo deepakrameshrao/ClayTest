@@ -64,6 +64,7 @@ class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickLi
                 sharedPrefrencesEditor.remove(LoginActivity.LOGGED_IN_USER_ID)
                 sharedPrefrencesEditor.remove(LoginActivity.IS_LOGGED_IN_USER_ADMIN)
                 sharedPrefrencesEditor.apply()
+                getSharedPreferences(LoginActivity.CLAY_PREFERENCE, Context.MODE_PRIVATE).edit().clear().apply()
 
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()

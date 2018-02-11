@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorText">#616161</color>
-    <color name="colorButtonBgColor">#004D40</color>
-    <color name="colorButtonBgColorSuccess">#009688</color>
-    <color name="colorButtonBgColorFailed">#F44336</color>
+    <color name="colorButtonBgColor">#039BE5</color>
+    <color name="colorButtonBgColorSuccess">#4CAF50</color>
+    <color name="colorButtonBgColorFailed">#E57373</color>
 </resources>

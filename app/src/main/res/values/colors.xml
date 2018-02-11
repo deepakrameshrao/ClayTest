@@ -7,4 +7,6 @@
     <color name="colorButtonBgColor">#039BE5</color>
     <color name="colorButtonBgColorSuccess">#4CAF50</color>
     <color name="colorButtonBgColorFailed">#E57373</color>
+    <color name="colorBackgroundLogin">#1A237E</color>
+    <color name="colorHint">#9E9E9E</color>
 </resources>

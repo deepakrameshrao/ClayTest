@@ -1,4 +1,4 @@
-package com.deepak.clay.view
+package com.deepak.clay.view.login
 
 import android.arch.lifecycle.ViewModel
 import android.content.SharedPreferences

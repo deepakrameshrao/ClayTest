@@ -1,4 +1,4 @@
-package com.deepak.clay.view
+package com.deepak.clay.view.login
 
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
@@ -10,13 +10,15 @@ import android.view.View
 import android.widget.Toast
 import com.deepak.clay.R
 import com.deepak.clay.databinding.ActivityLoginBinding
+import com.deepak.clay.model.User
 import com.deepak.clay.repository.UserRepository
+import com.deepak.clay.view.doorslist.DoorsActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var binding: ActivityLoginBinding
-    var userList: MutableList<UserRepository.User> = mutableListOf()
+    var userList: MutableList<User> = mutableListOf()
     var userRepo = UserRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,7 +73,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun loginToFirebase() {
         userList = userRepo.getData()
-        var loggedInUser = UserRepository.User()
+        var loggedInUser = User()
         loop@ for (i in userList) {
             loginSuccessful = i.userName == username.text.toString() && i.password == password.text.toString()
             if (loginSuccessful) {

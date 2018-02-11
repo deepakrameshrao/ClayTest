@@ -1,4 +1,4 @@
-package com.deepak.clay.view
+package com.deepak.clay.view.accesslog
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle

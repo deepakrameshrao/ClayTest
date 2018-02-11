@@ -1,4 +1,4 @@
-package com.deepak.clay.view
+package com.deepak.clay.view.configuredoor
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

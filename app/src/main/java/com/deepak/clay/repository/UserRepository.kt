@@ -1,5 +1,6 @@
 package com.deepak.clay.repository
 
+import com.deepak.clay.model.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -22,44 +23,16 @@ class UserRepository() {
                         p0?.children?.mapNotNullTo(userList) {
                             it.getValue<User>(User::class.java)
                         }
-                        for(user in userList) {
+                        for (user in userList) {
                             usersMap.put(user.id, user)
                         }
                     }
 
                     override fun onCancelled(p0: DatabaseError?) {}
                 })
-
-        /*dbRef.addChildEventListener(
-                object : ChildEventListener{
-                    override fun onCancelled(p0: DatabaseError?) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                    }
-
-                    override fun onChildMoved(p0: DataSnapshot?, p1: String?) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                    }
-
-                    override fun onChildChanged(p0: DataSnapshot?, p1: String?) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                    }
-
-                    override fun onChildAdded(p0: DataSnapshot?, p1: String?) {
-                        val user = p0?.getValue(User::class.java)
-
-                        if(user != null) { userMap.put(user.id, user)
-                        userList.add(user)}
-                    }
-
-                    override fun onChildRemoved(p0: DataSnapshot?) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                    }
-
-                }
-        )*/
     }
 
-    fun getData() : MutableList<User> {
+    fun getData(): MutableList<User> {
         return userList
     }
 
@@ -72,20 +45,6 @@ class UserRepository() {
         newRef.setValue(user)
     }
 
-
-    class User {
-
-        constructor() {}
-        constructor(userName: String, password: String, id: Int, admin: Int) {
-            this.userName = userName
-            this.password = password
-            this.id = id
-        }
-        var userName: String = ""
-        var password: String = ""
-        var id: Int = 0
-        var adminAccess: Boolean = false
-    }
 
     companion object {
         var usersMap: HashMap<Int, User> = HashMap()

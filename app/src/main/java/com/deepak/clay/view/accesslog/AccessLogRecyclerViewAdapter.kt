@@ -1,4 +1,4 @@
-package com.deepak.clay.view
+package com.deepak.clay.view.accesslog
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ class AccessLogRecyclerViewAdapter(var accessList: MutableCollection<AccessLog>)
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
         val binding = ItemAccessLogBinding.inflate(layoutInflater, parent, false)
-        return AccessLogRecyclerViewAdapter.ViewHolder(binding)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int = accessList.size

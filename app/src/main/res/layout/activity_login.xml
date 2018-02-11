@@ -6,13 +6,13 @@
     <data>
         <variable
             name="loginViewModel"
-            type="com.deepak.clay.view.LoginViewModel"/>
+            type="com.deepak.clay.view.login.LoginViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.deepak.clay.view.LoginActivity">
+        tools:context="com.deepak.clay.view.login.LoginActivity">
 
         <TextView
             android:id="@+id/title"

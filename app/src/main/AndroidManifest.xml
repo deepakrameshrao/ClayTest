@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.login.LoginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".view.DoorsActivity"
+            android:name=".view.doorslist.DoorsActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -31,11 +31,11 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".view.ConfigureDoorActivity"
+            android:name=".view.configuredoor.ConfigureDoorActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".view.AccessLogActivity"
+            android:name=".view.accesslog.AccessLogActivity"
             android:screenOrientation="portrait" />
 
     </application>

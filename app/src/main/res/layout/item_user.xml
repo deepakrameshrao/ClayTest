@@ -7,7 +7,7 @@
         <import type="android.widget.Switch" />
         <variable
             name="userViewModel"
-            type="com.deepak.clay.view.UserViewModel"/>
+            type="com.deepak.clay.view.configuredoor.UserViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout

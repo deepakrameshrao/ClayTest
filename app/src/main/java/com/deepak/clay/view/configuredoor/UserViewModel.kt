@@ -1,4 +1,4 @@
-package com.deepak.clay.view
+package com.deepak.clay.view.configuredoor
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable

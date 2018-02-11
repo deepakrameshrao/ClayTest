@@ -1,4 +1,4 @@
-package com.deepak.clay.view
+package com.deepak.clay.view.doorslist
 
 import android.arch.lifecycle.Observer
 import android.content.Context
@@ -12,6 +12,9 @@ import android.view.MenuItem
 import com.deepak.clay.R
 import com.deepak.clay.model.Door
 import com.deepak.clay.repository.DoorRepository
+import com.deepak.clay.view.configuredoor.ConfigureDoorActivity
+import com.deepak.clay.view.login.LoginActivity
+import com.deepak.clay.view.accesslog.AccessLogActivity
 import kotlinx.android.synthetic.main.activity_doors.*
 
 class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickListener {

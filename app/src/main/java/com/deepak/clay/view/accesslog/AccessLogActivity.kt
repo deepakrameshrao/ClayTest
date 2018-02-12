@@ -36,6 +36,7 @@ class AccessLogActivity: AppCompatActivity() {
                 layoutManager.orientation
         )
         access_recyclerview.addItemDecoration(dividerItemDecoration)
+
         supportActionBar?.title = getString(R.string.access_logs)
     }
 }

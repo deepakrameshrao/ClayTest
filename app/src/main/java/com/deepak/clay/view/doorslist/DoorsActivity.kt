@@ -9,6 +9,7 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.deepak.clay.R
 import com.deepak.clay.model.Door
 import com.deepak.clay.repository.DoorRepository
@@ -17,9 +18,21 @@ import com.deepak.clay.view.login.LoginActivity
 import com.deepak.clay.view.accesslog.AccessLogActivity
 import kotlinx.android.synthetic.main.activity_doors.*
 
-class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickListener {
+class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickListener, View.OnClickListener {
+    override fun onClick(v: View?) {
+        when(v?.id) {
+            R.id.fab -> {
+                var door = Door("", "$id,")
+                var intent = Intent(this, ConfigureDoorActivity::class.java)
+                intent.putExtra(ConfigureDoorActivity.BUNDLE_DOOR_NAME, door.doorName)
+                intent.putExtra(ConfigureDoorActivity.BUNDLE_DOOR_ACCESS_LIST, door.userList)
+                startActivity(intent)
+            }
+        }
+    }
 
     lateinit var doorsList: MutableCollection<Door>
+    var id: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +41,7 @@ class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickLi
         doorRepo.listenToData()
         var layoutManager = LinearLayoutManager(this)
         recyclerview.layoutManager = layoutManager
-        var id: Int = getSharedPreferences(LoginActivity.CLAY_PREFERENCE, Context.MODE_PRIVATE).getInt(LoginActivity.LOGGED_IN_USER_ID, 0)
+        id = getSharedPreferences(LoginActivity.CLAY_PREFERENCE, Context.MODE_PRIVATE).getInt(LoginActivity.LOGGED_IN_USER_ID, 0)
         var name: String = getSharedPreferences(LoginActivity.CLAY_PREFERENCE, Context.MODE_PRIVATE).getString(LoginActivity.LOGGED_IN_USER_NAME, "")
         doorsList = DoorRepository.doorsMutableLiveData.value?.values ?: mutableListOf()
         val repoAdapter = DoorRecyclerViewAdapter(DoorRepository.doorsMutableLiveData.value?.values ?: mutableListOf(), id, getAdminStatus(), this, name)
@@ -45,6 +58,13 @@ class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickLi
                 repoAdapter.setData(it.values)
             }
         })
+        if(getAdminStatus() > 0) {
+            fab.setOnClickListener(this)
+        } else {
+            fab.visibility = View.GONE
+        }
+
+        supportActionBar?.title = name
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -53,7 +73,7 @@ class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickLi
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-        menu?.findItem(R.id.action_configure)?.isVisible = getAdminStatus() > 0
+        menu?.findItem(R.id.action_logs)?.isVisible = getAdminStatus() > 0
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -69,7 +89,7 @@ class DoorsActivity : AppCompatActivity(), DoorRecyclerViewAdapter.OnItemClickLi
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
-            R.id.action_configure -> {
+            R.id.action_logs -> {
                 startActivity(Intent(this, AccessLogActivity::class.java))
             }
         }

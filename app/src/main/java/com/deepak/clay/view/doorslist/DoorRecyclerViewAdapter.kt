@@ -51,12 +51,12 @@ class DoorRecyclerViewAdapter(var doorList: MutableCollection<Door>, var id: Int
                     binding.openBtn.setBackgroundColor(
                             ContextCompat.getColor(context, R.color.colorButtonBgColorSuccess))
                     binding.openBtn.setText(R.string.opened)
-                    AccessLogRepository().addAccessLogs("$name - ${door.doorName} Door - Opened")
+                    AccessLogRepository().addAccessLogs("$name - ${door.doorName} - Opened")
                 } else {
                     binding.openBtn.setBackgroundColor(
                             ContextCompat.getColor(context, R.color.colorButtonBgColorFailed))
                     binding.openBtn.setText(R.string.access_denied)
-                    AccessLogRepository().addAccessLogs("$name - ${door.doorName} Door - Access Denied")
+                    AccessLogRepository().addAccessLogs("$name - ${door.doorName} - Access Denied")
                 }
                 android.os.Handler().postDelayed({
                     kotlin.run {

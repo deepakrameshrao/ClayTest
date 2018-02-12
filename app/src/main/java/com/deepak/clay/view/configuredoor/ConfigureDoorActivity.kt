@@ -3,6 +3,7 @@ package com.deepak.clay.view.configuredoor
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import com.deepak.clay.R
@@ -45,12 +46,16 @@ class ConfigureDoorActivity : AppCompatActivity() {
         when (item?.itemId) {
             R.id.action_save -> {
                 var accessibleUsers = StringBuffer()
-                for(id in UsersRecyclerViewAdapter.accessSet) {
-                    accessibleUsers.append(id)
-                    accessibleUsers.append(",")
+                if (UsersRecyclerViewAdapter.accessSet.size <= 0 || TextUtils.isEmpty(door_name.text.toString()))
+                    door_name.setError(getString(R.string.enter_door_name))
+                else {
+                    for (id in UsersRecyclerViewAdapter.accessSet) {
+                        accessibleUsers.append(id)
+                        accessibleUsers.append(",")
+                    }
+                    DoorRepository().addDoor(door_name.text.toString(), accessibleUsers.toString())
+                    finish()
                 }
-                DoorRepository().addDoor(door_name.text.toString(), accessibleUsers.toString())
-                finish()
             }
         }
         return true

@@ -10,25 +10,21 @@
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
-    <!--<Button
-        android:id="@+id/frontdoor"
-        android:text="@string/front_door"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
 
-    <Button
-        android:id="@+id/storagedoor"
-        android:text="@string/storgae_door"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/frontdoor"
-        app:layout_constraintLeft_toLeftOf="parent"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_margin="16dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="16dp" />-->
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintHorizontal_bias="1"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"/>
+
 
 </android.support.constraint.ConstraintLayout>
